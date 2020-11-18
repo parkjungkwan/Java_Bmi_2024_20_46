@@ -1,15 +1,16 @@
 package viewer;
 import java.util.Scanner;
 
-import bmi.BmiDto;
+import bmi.*;
 import calculator.*;
-import user.UserDto;
+import user.*;
 public class Main {
 	
 	public static void main(String[] args) {
 		Scanner scanner =  new Scanner(System.in);
 		CalculatorDto calculator = new CalculatorDto();
-		CalculatorController controller = new CalculatorController();
+		CalculatorController calculatorController = new CalculatorController();
+		BmiController bmiController = new BmiController();
 		BmiDto bmi = new BmiDto();
 		UserDto user = new UserDto();
 		System.out.println("MENU : 0. 종료  1.계산기 2.BMI");
@@ -22,7 +23,7 @@ public class Main {
 			calculator.setOpcode(scanner.next());
 			System.out.println("수 입력");
 			calculator.setNum2(scanner.nextInt());
-			System.out.println("답: "+controller.execute(calculator));
+			System.out.println("답: "+calculatorController.execute(calculator));
 			break;
 		case "2":
 			System.out.println("Bmi 계산 시작");
@@ -32,7 +33,7 @@ public class Main {
 			bmi.setHeight(scanner.nextDouble());
 			System.out.println("몸무게 입력: ");
 			bmi.setWeight(scanner.nextDouble());
-			System.out.println(controller.getBmi(user , bmi));
+			System.out.println(bmiController.getBmi(user , bmi));
 			break;
 		case "0":
 			System.out.println("시스템 종료");
