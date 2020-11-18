@@ -1,21 +1,11 @@
 package calculator;
 
-public class CalculatorService {
+public interface CalculatorService {
 	
-	int add(CalculatorDTO calculator) {
-		return calculator.getNum1() + calculator.getNum2();
-	}
-	int minus(CalculatorDTO calculator) {
-		return calculator.getNum1() - calculator.getNum2();
-	}
-	int multi(CalculatorDTO calculator) {
-		return calculator.getNum1() * calculator.getNum2();
-	}
-	int divid(CalculatorDTO calculator) {
-		return calculator.getNum1() / calculator.getNum2();
-	}
-	int modul(CalculatorDTO calculator) {
-		return calculator.getNum1() % calculator.getNum2();
-	}
-	
+	public int add(CalculatorDTO calculator);
+	public int minus(CalculatorDTO calculator);
+	public int multi(CalculatorDTO calculator);
+	public int divid(CalculatorDTO calculator);
+	int modul(CalculatorDTO calculator);
+
 }

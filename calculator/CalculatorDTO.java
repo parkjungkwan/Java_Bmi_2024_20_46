@@ -1,33 +1,33 @@
 package calculator;
 
 public class CalculatorDTO {
-	int num1;
-	int num2;
-	int result;
-	String opcode;
+	private int num1;
+	private int num2;
+	private int result;
+	private String opcode;
 	
-	int getNum1() {
+	public int getNum1() {
 		return num1;
 	}
-	void setNum1(int num1) {
+	public void setNum1(int num1) {
 		this.num1 = num1;
 	}
-	int getNum2() {
+	public int getNum2() {
 		return num2;
 	}
-	void setNum2(int num2) {
+	public void setNum2(int num2) {
 		this.num2 = num2;
 	}
-	int getResult() {
+	public int getResult() {
 		return result;
 	}
-	void setResult(int result) {
+	public void setResult(int result) {
 		this.result = result;
 	}
-	String getOpcode() {
+	public String getOpcode() {
 		return opcode;
 	}
-	void setOpcode(String opcode) {
+	public void setOpcode(String opcode) {
 		this.opcode = opcode;
 	}
 	
