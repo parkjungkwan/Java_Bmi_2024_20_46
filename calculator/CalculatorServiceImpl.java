@@ -3,28 +3,28 @@ package calculator;
 public class CalculatorServiceImpl implements CalculatorService{
 
 	@Override
-	public int add(CalculatorDTO calculator) {
+	public int add(CalculatorDto calculator) {
 		
 		return calculator.getNum1() + calculator.getNum2();
 	}
 
 	@Override
-	public int minus(CalculatorDTO calculator) {
+	public int minus(CalculatorDto calculator) {
 		return calculator.getNum1() - calculator.getNum2();
 	}
 
 	@Override
-	public int multi(CalculatorDTO calculator) {
+	public int multi(CalculatorDto calculator) {
 		return calculator.getNum1() * calculator.getNum2();
 	}
 
 	@Override
-	public int divid(CalculatorDTO calculator) {
+	public int divid(CalculatorDto calculator) {
 		return calculator.getNum1() / calculator.getNum2();
 	}
 
 	@Override
-	public int modul(CalculatorDTO calculator) {
+	public int modul(CalculatorDto calculator) {
 		return calculator.getNum1() % calculator.getNum2();
 	}
 

@@ -1,6 +1,6 @@
 package calculator;
 
-public class CalculatorDTO {
+public class CalculatorDto {
 	private int num1;
 	private int num2;
 	private int result;
