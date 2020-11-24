@@ -1,47 +1,106 @@
 package viewer;
 import java.util.Scanner;
 
-import bmi.*;
-import calculator.*;
-import user.*;
+import user.UserDto;
+import user.UserController;
+/**
+ * 요구사항 (기능정의)
+ * <사용자기능>
+ * 1. 회원가입
+ * 2. 로그인 
+ * 3. 비번 수정
+ * 4. 회원탈퇴
+ * 5. 아이디 존재 체크
+ * 6. 마이페이지
+ * **********
+ * <관리자기능>
+ * 7. 회원목록
+ * 8. 아이디검색
+ * 9. 이름검색
+ * 10. 전체 회원수
+ */
+
 public class Main {
 	
 	public static void main(String[] args) {
-		Scanner scanner =  new Scanner(System.in);
-		CalculatorDto calculator = new CalculatorDto();
-		CalculatorController calculatorController = new CalculatorController();
-		BmiController bmiController = new BmiController();
-		BmiDto bmi = new BmiDto();
-		UserDto user = new UserDto();
-		System.out.println("MENU : 0. 종료  1.계산기 2.BMI");
-		switch(scanner.next()) {
-		case "1":
-			System.out.println("계산기 시작");
-			System.out.println("수 입력");
-			calculator.setNum1(scanner.nextInt());
-			System.out.println("연산자 입력 +, -, *, /, %");
-			calculator.setOpcode(scanner.next());
-			System.out.println("수 입력");
-			calculator.setNum2(scanner.nextInt());
-			System.out.println("답: "+calculatorController.execute(calculator));
-			break;
-		case "2":
-			System.out.println("Bmi 계산 시작");
-			System.out.println("이름 입력 : ");
-			user.setName(scanner.next());
-			System.out.println("키 입력: ");
-			bmi.setHeight(scanner.nextDouble());
-			System.out.println("몸무게 입력: ");
-			bmi.setWeight(scanner.nextDouble());
-			System.out.println(bmiController.getBmi(user , bmi));
-			break;
-		case "0":
-			System.out.println("시스템 종료");
-			break;
+		Scanner scanner = new Scanner(System.in);
+		UserController userController = new UserController();
+		while(true) {
+			System.out.println("Menu: (1)회원가입 (2)로그인 (3)비밀번호 수정"
+					+ "(4)회원탈퇴 (5)아이디 중복체크 (6)마이페이지 "
+					+ "(7)회원목록 (8)아이디검색 (9)이름검색 (10)전체 회원수 "
+					+ "(0)종료");
+			switch (scanner.next()) {
+			case "0":
+				System.out.println("시스템 종료");
+				return;
+			case "1":
+				System.out.println("1번 회원가입");
+				UserDto user = new UserDto();
+				System.out.println("ID, PW, NAME 입력");
+				user.setUserid(scanner.next());
+				user.setPassword(scanner.next());
+				user.setName(scanner.next());
+				
+				
+				userController.postJoin(user);
+				break;
+			case "2":
+				System.out.println("2번 로그인");
+				break;
+			case "3":
+				System.out.println("3번 비밀번호 수정");
+				break;
+			case "4":
+				System.out.println("4번 회원탈퇴");
+				break;
+			case "5":
+				System.out.println("5번 아이디 중복체크");
+				break;
+			case "6":
+				System.out.println("6번 마이페이지");
+				break;
+			case "7":
+				System.out.println("7번 회원목록");
+				break;
+			case "8":
+				System.out.println("8번 아이디검색");
+				break;
+			case "9":
+				System.out.println("9번 이름검색");
+				break;
+			case "10":
+				System.out.println("10번 전체 회원수");
+				break;
+
+			}
 		}
-		scanner.close();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
